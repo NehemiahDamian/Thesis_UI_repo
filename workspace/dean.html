@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        background-color: #f7faff;
+      }
+
+      /* Sidebar */
+      .navbar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        width: 250px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 1px solid #e0e0e0;
+      }
+
+      .navbar img {
+        width: 150px;
+        margin-top: 30px;
+      }
+
+      .navbar ul {
+        list-style: none;
+        margin-top: 50px;
+        width: 100%;
+      }
+
+      .navbar ul li {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .navbar ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        display: block;
+        padding: 10px 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .navbar ul li a:hover {
+        background-color: #f0f0f0;
+        color: #007bff;
+      }
+
+      img {
+        width: 200px;
+        margin-top: 30px;
+      }
+
+      .content {
+        text-align: center;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        margin-left: 150px;
+      }
+
+      .college {
+        width: 450px;
+        height: 150px;
+        background-color: rgb(196, 196, 208);
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        font-size: 20px;
+        transition: 0.4s ease;
+      }
+      .college:hover {
+        transform: scale(1.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+      }
+
+      .registration-container {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Transparent white background */
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .registration-container h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        background-image: linear-gradient(to right, purple, red);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .input-group label {
+        font-size: 14px;
+        color: #333;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .input-group input,
+      .input-group select {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        box-sizing: border-box;
+      }
+
+      .register-button {
+        width: 100%;
+        background-color: #ac3226;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .register-button:hover {
+        background-color: #ba4d26;
+      }
+
+      .success-message {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #4caf50;
+        display: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .registration-container {
+          padding: 20px;
+        }
+
+        .registration-container h1 {
+          font-size: 24px;
+        }
+
+        .register-button {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <nav class="navbar">
+        <img src="/school_practice/logo.png" alt="" />
+        <ul>
+          <li><a href="registrar_dashboard.html">Dashboard</a></li>
+          <li><a href="fillupform.html">Alumni old</a></li>
+          <li><a href="dashboardcolleges.html">Archives</a></li>
+          <li><a href="dean.html">Sign up Dean</a></li>
+          <li><a href="re.html">Diploma Request</a></li>
+          <li><a href="pending.html">Pending Accounts</a></li>
+        </ul>
+      </nav>
+      <div class="registration-container">
+        <h1>Register a Dean</h1>
+        <form id="registerForm">
+          <div class="input-group">
+            <label for="name">Dean's Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter full name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="email">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email address"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="college">College:</label>
+            <select id="college" name="college" required>
+              <option value="" disabled selected>Select College</option>
+              <option value="COT">COT - College of Technology</option>
+              <option value="CAS">CAS - College of Arts and Sciences</option>
+              <option value="CIR">
+                CIR - College of International Relations
+              </option>
+              <option value="CITHM">
+                CITHM - College of International Tourism and Hospitality
+                Management
+              </option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="publicKey">Generated Public Key:</label>
+            <input
+              type="text"
+              id="publicKey"
+              name="publicKey"
+              placeholder="Automatically generated"
+              disabled
+            />
+          </div>
+          <button type="button" class="register-button" onclick="generateKey()">
+            Register
+          </button>
+          <p class="success-message" id="successMessage">
+            Dean registered successfully!
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
